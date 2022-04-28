@@ -6,52 +6,62 @@ const zucchine = [
     {
         varieta: "nera",
         pesoGrammi: 243,
-        lunghezza: [8, "cm"]
+        lunghezza: 8,
+        unitaMisura: "cm"
     },
     {
         varieta: "romanesco",
         pesoGrammi: 263,
-        lunghezza: [23, "cm"]
+        lunghezza: 23,
+        unitaMisura: "cm"
     },
     {
         varieta: "fiorentino",
         pesoGrammi: 213,
-        lunghezza: [51, "cm"]
+        lunghezza: 51,
+        unitaMisura: "cm"
     },
     {
         varieta: "napoletana",
         pesoGrammi: 143,
-        lunghezza: [11, "cm"]
+        lunghezza: 11,
+        unitaMisura: "cm"
     },
     {
         varieta: "tonde",
         pesoGrammi: 183,
-        lunghezza: [42, "cm"]
+        lunghezza: 42,
+        unitaMisura: "cm"
     },
     {
         varieta: "trombetta",
         pesoGrammi: 278,
-        lunghezza: [6, "cm"]
+        lunghezza: 6,
+        unitaMisura: "cm"
     },
     {
         varieta: "Crookneck",
         pesoGrammi: 118,
-        lunghezza: [8.5, "cm"]
+        lunghezza:  1.5,
+        unitaMisura: "cm"
     },
     {
         varieta: "pâtisson",
         pesoGrammi: 207,
-        lunghezza: [10, "cm"]
+        lunghezza: 10,
+        unitaMisura: "cm"
     },
     {
         varieta: "Trombetta d'Albenga",
         pesoGrammi: 167,
-        lunghezza: [16, "cm"]
+        lunghezza: 16,
+        unitaMisura: "cm"
     },
     {
         varieta: "Golden",
         pesoGrammi: 167,
-        lunghezza: [18, "cm"]
+        lunghezza: 18,
+        unitaMisura: "cm"
     }
 ]
 
@@ -61,8 +71,8 @@ function separateXWeight(zucche){
     const weightSeparetor = (x,peso) => (peso < 15) ? under15.push(x) : over15.push(x);
 
     for(let x of zucche){
-        console.log(x.lunghezza[0])
-        weightSeparetor(x,x.lunghezza[0])
+        console.log(x.lunghezza)
+        weightSeparetor(x,x.lunghezza)
         
     }
     // console.log(over15, "over")
@@ -79,7 +89,7 @@ function separateXWeight(zucche){
 }
 
 function writeHtml(ul,x){
-    document.querySelector(ul).innerHTML += `<li>${x.varieta.charAt(0).toUpperCase() + x.varieta.slice(1)} con ${x.lunghezza[0] + x.lunghezza[1]} </li>`
+    document.querySelector(ul).innerHTML += `<li>${x.varieta.charAt(0).toUpperCase() + x.varieta.slice(1)} con ${x.lunghezza + x.unitaMisura} </li>`
 }
 
 separateXWeight(zucchine)
