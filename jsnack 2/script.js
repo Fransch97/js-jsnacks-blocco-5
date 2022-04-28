@@ -77,7 +77,7 @@ function separateXWeight(){
 }
 
 function writeHtml(ul,x){
-    document.querySelector(ul).innerHTML += `<li>${x.varieta} con ${x.lunghezza[0]}cm  </li>`
+    document.querySelector(ul).innerHTML += `<li>${x.varieta.charAt(0).toUpperCase() + x.varieta.slice(1)} con ${x.lunghezza[0]}cm  </li>`
 }
 
 separateXWeight()
