@@ -55,18 +55,20 @@ const zucchine = [
     }
 ]
 
-function separateXWeight(){
+function separateXWeight(zucche){
     const over15 = []
     const under15 = []
     const weightSeparetor = (x,peso) => (peso < 15) ? under15.push(x) : over15.push(x);
 
-    for(let x of zucchine){
+    for(let x of zucche){
         console.log(x.lunghezza[0])
         weightSeparetor(x,x.lunghezza[0])
         
     }
-    console.log(over15, "over")
-    console.log(under15, "under")
+    // console.log(over15, "over")
+    // console.log(under15, "under")
+    // over15.sort(over15.lunghezza)
+    // console.log(over15)
     for(let xx of over15){
         console.log(xx.varieta)
         writeHtml(".over",xx)
@@ -77,10 +79,10 @@ function separateXWeight(){
 }
 
 function writeHtml(ul,x){
-    document.querySelector(ul).innerHTML += `<li>${x.varieta.charAt(0).toUpperCase() + x.varieta.slice(1)} con ${x.lunghezza[0] + x.lunghezza[1]}  </li>`
+    document.querySelector(ul).innerHTML += `<li>${x.varieta.charAt(0).toUpperCase() + x.varieta.slice(1)} con ${x.lunghezza[0] + x.lunghezza[1]} </li>`
 }
 
-separateXWeight()
+separateXWeight(zucchine)
 
 console.log(separateXWeight())
 // console.log(under15, "under")
